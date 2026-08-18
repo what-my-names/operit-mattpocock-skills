@@ -1,0 +1,5 @@
+interface:
+  display_name: "设置马特·波科克技能"
+  short_description: "为技能配置存储库"
+policy:
+  allow_implicit_invocation: false
