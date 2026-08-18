@@ -1,0 +1,5 @@
+interface:
+  display_name: "烧烤我"
+  short_description: "通过面试完善计划"
+policy:
+  allow_implicit_invocation: false
