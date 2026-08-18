@@ -1,0 +1,5 @@
+interface:
+  display_name: "不可触摸"
+  short_description: "将对话压缩为 handoff"
+policy:
+  allow_implicit_invocation: false
