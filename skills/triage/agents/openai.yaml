@@ -1,0 +1,5 @@
+interface:
+  display_name: "分诊"
+  short_description: "通过 triage 角色转移问题"
+policy:
+  allow_implicit_invocation: false
