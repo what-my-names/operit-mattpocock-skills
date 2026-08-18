@@ -1,0 +1,5 @@
+interface:
+  display_name: "规格"
+  short_description: "将对话变成规范"
+policy:
+  allow_implicit_invocation: false
