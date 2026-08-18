@@ -1,0 +1,5 @@
+interface:
+  display_name: "询问马特"
+  short_description: "找到合适的技能或工作流程"
+policy:
+  allow_implicit_invocation: false
