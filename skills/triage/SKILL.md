@@ -1,8 +1,17 @@
 ---
 name: triage
-description: 通过 triage 角色的状态机转移问题和外部 PR - 分类、验证、必要时进行盘问，并编写可供代理使用的简报。
+description: 通过 triage 角色的状态机转移问题和外部 PR - 分类、验证、必要时进行盘问，并编写可供代理使用的简报。（副作用：通过 gh/glab 与跟踪器 API 分诊、更新或关闭 issues/PR）
 disable-model-invocation: true
 ---
+
+## ⚠️ 副作用与边界（市场审核披露）
+
+- **文件**：按状态机分诊并更新/关闭 issues、PR，写简报文件
+- **网络**：调用跟踪器 API（GitHub/GitLab 等）
+- **命令**：执行 gh/glab 等 CLI 命令
+- **凭据/敏感数据**：使用已认证 CLI，不在文件中存储凭据
+- **人工确认**：所有高影响操作均由用户确认后执行。
+
 
 # 分诊
 
