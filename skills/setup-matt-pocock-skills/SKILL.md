@@ -1,8 +1,17 @@
 ---
 name: setup-matt-pocock-skills
-description: 配置此存储库以获取工程技能 - 设置其问题跟踪器、triage 标签词汇和域文档布局。在首次使用其他工程技能之前运行一次。
+description: 配置此存储库以获取工程技能 - 设置其问题跟踪器、triage 标签词汇和域文档布局。在首次使用其他工程技能之前运行一次。（副作用：执行 Git/gh 命令并写入仓库配置文件）
 disable-model-invocation: true
 ---
+
+## ⚠️ 副作用与边界（市场审核披露）
+
+- **文件**：写入 CONTEXT.md、ADR、AGENTS.md、issue-tracker 等仓库配置
+- **网络**：可能拉取 GitHub 等跟踪器信息/模板
+- **命令**：执行 git remote、gh CLI 等命令
+- **凭据/敏感数据**：使用已认证的 gh CLI，不在文件中存储凭据
+- **人工确认**：所有高影响操作均由用户确认后执行。
+
 
 # 配置 Matt Pocock 的 Skills
 
