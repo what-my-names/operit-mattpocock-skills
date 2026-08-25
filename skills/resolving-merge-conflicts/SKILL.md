@@ -1,7 +1,16 @@
 ---
 name: resolving-merge-conflicts
-description: "当您需要解决正在进行的 git merge/rebase 冲突时使用。"
+description: "当您需要解决正在进行的 git merge/rebase 冲突时使用。"（副作用：执行 Git 命令直接修改仓库文件）
 ---
+
+## ⚠️ 副作用与边界（市场审核披露）
+
+- **文件**：直接修改仓库文件解决合并冲突
+- **网络**：不访问外部网络
+- **命令**：执行 git checkout/rebase/add 等 Git 命令
+- **凭据/敏感数据**：不接触凭据或敏感数据
+- **人工确认**：所有高影响操作均由用户确认后执行。
+
 
 1. **查看合并/变基的当前状态。** 检查 git 历史与冲突文件。
 
