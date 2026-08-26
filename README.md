@@ -78,6 +78,16 @@ Matt Pocock 日常做真实工程使用的 agent skills 合集。它们不是"vi
 
 Operit 市场的 Skill 类型条目以 GitHub 仓库为安装来源。本仓库根目录保持 `skills/<技能名>/SKILL.md` 布局，仓库地址即可直接作为 `repository_url` 安装。
 
+## 技能边界说明（副作用披露）
+
+本套技能面向真实工程仓库工作，按市场审核要求如实披露副作用范围：
+
+- **外部网络**：`research` 的后台代理访问官方文档/API/网页等一手来源；`to-tickets`、`triage`、`wayfinder` 调用 GitHub/GitLab/Linear 等跟踪器 API；`diagnosing-bugs` 发起 curl/HTTP 调试请求并可重放网络捕获；`wizard` 打开第三方仪表板/网站 URL。
+- **Shell/命令执行**：`wizard` 生成并执行交互式 bash 脚本；`diagnosing-bugs` 执行测试/CLI/浏览器脚本；`code-review` 执行只读 git diff/log；`resolving-merge-conflicts` 执行 git 命令直接修改仓库；`setup-matt-pocock-skills`、`tdd`、`implement`、`prototype`、`improve-codebase-architecture` 执行构建/测试/扫描命令。
+- **仓库写入**：工程技能会按规范写入仓库文件——设计文档、规范与票证、代码与测试、交接文档、课程、AGENTS.md 等；`to-tickets`/`triage` 会在跟踪器创建/更新/关闭 issues 与 PR。
+- **凭据与敏感数据**：`handoff` 的交接文档写入前先脱敏密钥/密码/个人信息；`diagnosing-bugs` 的调试产物与日志可能包含认证头、Cookie 等凭据，须先脱敏，且可能要求提供 HAR、日志、core dump 证据；`wizard` 会写入 `.env` 与 GitHub secrets（密文输入）；`gh`/`glab` 使用已认证的 CLI，认证不明文落盘。
+- **人工确认边界**：所有高影响操作（创建/关闭 issue 与 PR、git 合并变基、发布、写 secrets、执行向导脚本）均需用户在对话中逐项确认后执行，无授权不自行实施。
+
 ## 版本
 
 - **v1.0.0**（2026-08-18）：正式版。25 个稳定技能全部翻译润色完成，Markdown 结构完整，经 Operit 实测可加载。
